@@ -76,7 +76,6 @@ h2 {
 }
 
 .card__header {
-  width: 100%;
   margin: 6rem auto;
   display: flex;
   justify-content: space-between;
@@ -111,7 +110,6 @@ h2 {
   background-color: inherit;
   font-size: 1.8rem;
   color: #878787;
-  width: 100%;
   margin-bottom: 3rem;
 }
 
@@ -148,7 +146,6 @@ h2 {
 
 /*table */
 .table__container {
-  width: 100%;
   display: flex;
   flex-direction: column;
   border: 1px solid #ececec;
