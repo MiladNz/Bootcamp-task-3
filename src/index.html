@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card__header">
+        <h2>لیست تراکنش ها</h2>
+        <div class="search">
+          <input
+            class="search-input"
+            type="text"
+            placeholder="جستجوی تراکنش ..."
+            name=""
+            id="" />
+          <span class="search-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#fff"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <!-- ////// -->
+      <div class="card__btn">
+        <button class="btn">بارگذاری تراکنش ها</button>
+      </div>
+      <!-- ////////// -->
+      <div class="card__body">
+        <p class="title">لیست تراکنش های شما</p>
+        <div class="table__container">
+          <table>
+            <thead>
+              <tr>
+                <th>ردیف</th>
+                <th>نوع تراکنش</th>
+                <th class="th_price">
+                  <div class="th_div sort_price">
+                    مبلغ
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6 chevron chevron_price rotate">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </div>
+                </th>
+                <th>شماره پیگیری</th>
+                <th>
+                  <div class="th_div sort_date">
+                    تاریخ تراکنش
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6 chevron chevron_date rotate">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="table__body">
+              <!-- <tr>
+                <td>1</td>
+                <td>افزایش اعتبار</td>
+                <td>150000</td>
+                <td>123456</td>
+                <td>1403/02/05</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
