@@ -17,7 +17,7 @@ let allData = [];
 btn.addEventListener("click", loadContent);
 priceSort.addEventListener("click", priceBasedSort);
 dateSort.addEventListener("click", dateBasedSort);
-searchInput.addEventListener("input", filterData);
+searchInput.addEventListener("input", filterData, priceBasedSort);
 searchIcon.addEventListener("click", filterData);
 
 //functions:
@@ -40,10 +40,10 @@ function loadContent() {
 
 function renderData(data) {
   tableBody.innerHTML = "";
-  data.forEach((item) => {
+  data.forEach((item, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-        <td>${item.id}</td>
+        <td>${index + 1}</td>
         ${
           item.type === "افزایش اعتبار"
             ? `<td style='color : green'>${item.type}</td>`
