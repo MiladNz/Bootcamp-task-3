@@ -17,7 +17,7 @@ let allData = [];
 btn.addEventListener("click", loadContent);
 priceSort.addEventListener("click", priceBasedSort);
 dateSort.addEventListener("click", dateBasedSort);
-searchInput.addEventListener("input", filterData, priceBasedSort);
+searchInput.addEventListener("input", filterData);
 searchIcon.addEventListener("click", filterData);
 
 //functions:
