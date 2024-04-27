@@ -60,52 +60,102 @@ function renderData(data) {
 }
 
 function priceBasedSort() {
+  const searchItem = +searchInput.value.trim();
   chevronPrice.classList.toggle("up");
-  if (chevronPrice.classList.contains("up")) {
-    axios
-      .get(`${URL}?_sort=price&_order=asc`)
-      .then((res) => {
-        let ascSortedData = res.data;
-        renderData(ascSortedData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  if (searchItem) {
+    if (chevronPrice.classList.contains("up")) {
+      axios
+        .get(`${URL}?refId_like=${searchItem}&_sort=price&_order=asc`)
+        .then((res) => {
+          let data = res.data;
+          renderData(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      axios
+        .get(`${URL}?refId_like=${searchItem}&_sort=price&_order=desc`)
+        .then((res) => {
+          let data = res.data;
+          renderData(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   } else {
-    axios
-      .get(`${URL}?_sort=price&_order=desc`)
-      .then((res) => {
-        let desSortedData = res.data;
-        renderData(desSortedData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (chevronPrice.classList.contains("up")) {
+      axios
+        .get(`${URL}?_sort=price&_order=asc`)
+        .then((res) => {
+          let ascSortedData = res.data;
+          renderData(ascSortedData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else if (!chevronPrice.classList.contains("up")) {
+      axios
+        .get(`${URL}?_sort=price&_order=desc`)
+        .then((res) => {
+          let desSortedData = res.data;
+          renderData(desSortedData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 }
 
 function dateBasedSort() {
+  const searchItem = +searchInput.value.trim();
   chevronDate.classList.toggle("up");
-  if (chevronDate.classList.contains("up")) {
-    axios
-      .get(`${URL}?_sort=date&_order=asc`)
-      .then((res) => {
-        let ascSortedData = res.data;
-        renderData(ascSortedData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  if (searchItem) {
+    if (chevronDate.classList.contains("up")) {
+      axios
+        .get(`${URL}?refId_like=${searchItem}&_sort=date&_order=asc`)
+        .then((res) => {
+          let ascSortedData = res.data;
+          renderData(ascSortedData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      axios
+        .get(`${URL}?refId_like=${searchItem}&_sort=date&_order=desc`)
+        .then((res) => {
+          let desSortedData = res.data;
+          renderData(desSortedData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   } else {
-    axios
-      .get(`${URL}?_sort=date&_order=desc`)
-      .then((res) => {
-        let desSortedData = res.data;
-        renderData(desSortedData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (chevronDate.classList.contains("up")) {
+      axios
+        .get(`${URL}?_sort=date&_order=asc`)
+        .then((res) => {
+          let ascSortedData = res.data;
+          renderData(ascSortedData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      axios
+        .get(`${URL}?_sort=date&_order=desc`)
+        .then((res) => {
+          let desSortedData = res.data;
+          renderData(desSortedData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 }
 
